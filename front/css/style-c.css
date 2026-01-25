@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #36393f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.inscription-card {
+    background-color: #2f3136;
+    border: 2px solid #8b5cf6;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.title {
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: #b9bbbe;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background-color: #202225;
+    border: 2px solid #8b5cf6;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #a78bfa;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #8b5cf6;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #a78bfa;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+}
+
+.link-back {
+    display: block;
+    text-align: center;
+    color: #8b5cf6;
+    text-decoration: underline;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.link-back:hover {
+    color: #a78bfa;
+}
+
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    display: none;
+}
+
+.message.success {
+    background-color: #2d5f2e;
+    color: #7cfc00;
+    border: 1px solid #7cfc00;
+}
+
+.message.error {
+    background-color: #5f2d2d;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+}
