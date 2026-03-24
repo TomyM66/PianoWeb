@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChopChopin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap"/>
+  <link rel="stylesheet" href="../css/style-a.css"/>
+</head>
+<body>
+
+  <div id="loading">
+    <div class="spin"></div>
+    <p>Initialisation…</p>
+  </div>
+
+  <div id="overlay">
+    <div id="logo">
+      <span class="ico">♪</span>
+      <span class="cho">Cho</span><span class="chopin">Chopin</span>
+    </div>
+    <nav id="nav">
+      <button class="nav-btn" id="btn-profile">Profil</button>
+      <div class="nav-sep"></div>
+      <button class="nav-btn" id="btn-record">
+        <span id="rec-dot"></span>Enregistrer
+      </button>
+      <button class="nav-btn" id="btn-save">Sauvegarder</button>
+      <div class="nav-sep"></div>
+      <button class="nav-btn danger" id="btn-logout">Déconnexion</button>
+    </nav>
+  </div>
+
+  <div id="main">
+    <div id="panel-piano">
+      <p class="panel-title">Piano</p>
+      <div id="cabinet">
+        <div id="felt"></div>
+        <div id="keys"></div>
+      </div>
+      <div id="piano-status">SYS:READY · OCT 4-5-6</div>
+    </div>
+
+    <div class="h-sep"></div>
+
+    <div id="panel-reader">
+      <div class="reader-box">
+        <h2>Partition Textuelle</h2>
+        <textarea id="notes-input" placeholder="do re mi fa sol la si · séparés par espace ou virgule"></textarea>
+        <div id="seq-display"></div>
+        <div class="reader-opts">
+          <label>Tempo</label>
+          <input type="range" id="tempo-val" min="40" max="240" value="90"/>
+          <span id="tempo-label">90 bpm</span>
+          <label>Octave</label>
+          <select id="octave-sel">
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <div class="reader-controls">
+          <button class="ctrl-btn" id="btn-play-notes">▶ Jouer</button>
+          <button class="ctrl-btn stop-btn" id="btn-stop-notes" disabled>■ Stop</button>
+        </div>
+      </div>
+
+      <div class="reader-box" id="save-box">
+        <h2>Sauvegarder Morceau</h2>
+        <div class="save-fields">
+          <input type="text" id="save-titre" placeholder="Titre du morceau"/>
+          <input type="text" id="save-auteur" placeholder="Auteur"/>
+        </div>
+        <div class="save-fields">
+          <select id="save-access">
+            <option value="publique">Publique</option>
+            <option value="privée">Privée</option>
+          </select>
+          <input type="number" id="save-vitesse" placeholder="Vitesse bpm" min="20" max="300" value="90"/>
+        </div>
+        <button id="btn-do-save">[ Sauvegarder ]</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-bg" id="modal-profile">
+    <div class="modal">
+      <h2>Profil</h2>
+      <div class="modal-field">
+        <label>Nom d'utilisateur</label>
+        <input type="text" id="p-user" placeholder="Jean Dupont"/>
+      </div>
+      <div class="modal-field">
+        <label>Email</label>
+        <input type="email" id="p-email" placeholder="jean@exemple.fr"/>
+      </div>
+      <div class="modal-field">
+        <label>Mot de passe</label>
+        <input type="password" id="p-pass" placeholder="••••••••"/>
+      </div>
+      <button class="modal-close" id="modal-close-btn">Fermer</button>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <script src="../js/piano.js"></script>
+</body>
+</html>
