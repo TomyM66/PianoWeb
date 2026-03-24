@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ChopChopin</title>
@@ -108,5 +109,104 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
   <script src="../js/piano.js"></script>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChopChopin</title>
+    <!-- Lien vers le CSS externe -->
+    <link rel="stylesheet" href="../css/style-a.css">
+</head>
+<body>
+    <!-- Bandeau du haut -->
+    <div class="header">
+        <h1>ChopChopin</h1>
+        <div class="menu-container">
+            <button class="hamburger-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+            
+            <!-- Menu déroulant -->
+            <div class="dropdown-menu" id="dropdownMenu">
+                <div class="menu-header">Synchroniser et enregistrer les données</div>
+                
+                <div class="menu-section">
+                    <div class="menu-item" onclick="openFile()">
+                        <span class="menu-item-text">📂 Ouvrir</span>
+                        <span class="menu-item-shortcut">Ctrl+O</span>
+                    </div>
+                    <div class="menu-item" onclick="saveFile()">
+                        <span class="menu-item-text">💾 Enregistrer</span>
+                        <span class="menu-item-shortcut">Ctrl+S</span>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-item">
+                        <span class="menu-item-text">⭐ Profils</span>
+                        <span class="menu-arrow">›</span>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="menu-item" onclick="disconnect()">
+                        <span class="menu-item-text">🚪 Déconnexion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteneur principal -->
+    <div class="main-container">
+        <!-- Piano scrollable -->
+        <div class="piano-container">
+            <div class="piano-title">Piano Virtuel (Faites glisser pour voir toutes les touches →)</div>
+            <div class="piano-wrapper">
+                <div class="piano" id="piano"></div>
+            </div>
+        </div>
+
+        <!-- Section inférieure : 2 rectangles -->
+        <div class="bottom-section">
+            <!-- Visualiseur de partition -->
+            <div class="partition-viewer">
+                <div class="section-title">
+                    <span>📜 Partition</span>
+                    <button class="btn btn-secondary" onclick="importPartition()">Importer</button>
+                </div>
+                <div class="sheet-music" id="sheetMusic">
+                    <p><i>Partition vide. Importez une partition ou créez-en une avec la zone de saisie →</i></p>
+                </div>
+                <div style="margin-top: 10px;">
+                    <button class="btn" onclick="playPartition()">▶ Lire la partition</button>
+                    <span class="play-indicator" id="playIndicator">♪ Lecture en cours...</span>
+                </div>
+            </div>
+
+            <!-- Zone de saisie des notes -->
+            <div class="note-input">
+                <div class="section-title">
+                    <span>✍️ Écrire les notes</span>
+                </div>
+                <textarea 
+                    class="note-textarea" 
+                    id="noteInput" 
+                    placeholder="Écrivez vos notes ici...&#10;Exemple : Do Do Sol Sol La La Sol Fa Fa Mi Mi Ré Ré Do&#10;ou : C C G G A A G F F E E D D C"
+                >Do Do Sol Sol La La Sol
+Fa Fa Mi Mi Ré Ré Do
+Sol Sol Fa Fa Mi Mi Ré
+Sol Sol Fa Fa Mi Mi Ré</textarea>
+                <div class="action-buttons">
+                    <button class="btn" onclick="playNotes()">▶ Jouer les notes</button>
+                    <button class="btn" onclick="transferToPartition()">→ Transférer vers partition</button>
+                    <button class="btn btn-secondary" onclick="clearNotes()">🗑️ Effacer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+>>>>>>> b346799934714b933c65d960bac0a1d09ab3a1d0
 </body>
 </html>

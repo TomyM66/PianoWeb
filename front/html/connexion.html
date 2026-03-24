@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ChopChopin - Connexion</title>
@@ -26,3 +27,64 @@
 <script src="../js/main.js"></script>
 </body>
 </html>
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChopChopin - Connexion</title>
+    <link rel="stylesheet" href="../css/style-c.css">
+</head>
+<body>
+    <div class="container">
+        <div class="inscription-card">
+            <h1 class="title">Connexion</h1>
+            
+            <div class="form-group">
+                <label for="email">Votre email</label>
+                <input type="email" id="email" placeholder="Entrez votre email">
+            </div>
+
+            <div class="form-group">
+                <label for="code">Votre code</label>
+                <input type="password" id="code" placeholder="Entrez votre code">
+            </div>
+
+            <button class="btn" onclick="connecter()">Se connecter</button>
+
+            <div id="message" class="message"></div>
+
+            <a href="accueil.html" class="link-back">Retour à l'accueil</a>
+        </div>
+    </div>
+
+    <script>
+        function connecter() {
+            const email = document.getElementById('email').value;
+            const code = document.getElementById('code').value;
+            const messageEl = document.getElementById('message');
+
+            // Vérification que tous les champs sont remplis
+            if (!email || !code) {
+                messageEl.textContent = 'Veuillez remplir tous les champs';
+                messageEl.className = 'message error';
+                messageEl.style.display = 'block';
+                return;
+            }
+
+            // Stockage dans des variables pour l'API
+            window.email = email;
+            window.code = code;
+
+            // Redirection vers la page ChopChopin
+            window.location.href = 'chopchopin.html';
+        }
+
+        // Permettre la soumission avec la touche Entrée
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                connecter();
+            }
+        });
+    </script>
+</body>
+</html>
+>>>>>>> b346799934714b933c65d960bac0a1d09ab3a1d0
