@@ -24,11 +24,11 @@ PROJE-P/
 
 ```bash
 # Dans le dossier PROJE-P/
+docker system prune -f
+docker network rm proje-p-fixed_default 2>/dev/null
 docker-compose up --build
 ```
-
-- API disponible sur : http://localhost:3000
-- Base de données MySQL sur : localhost:3306
+http://localhost:8080/front/html/accueil.html
 
 ## Routes API
 
@@ -43,11 +43,6 @@ docker-compose up --build
 
 ```bash
 docker-compose down
-```
+ou control C
 
-## Réinitialiser la base de données
 
-```bash
-docker-compose down -v
-docker-compose up --build
-```
