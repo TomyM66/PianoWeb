@@ -24,7 +24,7 @@ PROJE-P/
 
 ```bash
 # Dans le dossier PROJE-P/
-docker system prune -f
+docker system prune -f //supprime tout les conteneur docker
 docker network rm proje-p-fixed_default 2>/dev/null
 docker-compose up --build
 ```
